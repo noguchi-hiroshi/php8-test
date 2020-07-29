@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  php8:
+    image: keinos/php8-jit:latest
+    volumes:
+      - ./:/app
+    working_dir: /app
+  php8-off:
+    build:
+      context: ./
+      dockerfile: ./docker/php8-jit-off/Dockerfile
+    volumes:
+      - ./:/app
+    working_dir: /app
